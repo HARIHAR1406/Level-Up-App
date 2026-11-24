@@ -322,9 +322,19 @@ If you find this project interesting, have feedback, or would like to collaborat
 
 **HARIHAR R**
 
-- **Email:** [harihar.r1406@gmail.com](mailto:harihar.r1406@gmail.com)
-- **LinkedIn:** [linkedin.com/in/harihar-r](https://www.linkedin.com/in/harihar-r)
-- **GitHub:** [github.com/HARIHAR1406](https://github.com/HARIHAR1406)
+| Platform | Handle / Contact |
+|:---|:---|
+| 📧 **Email** | [harihar.r1406@gmail.com](mailto:harihar.r1406@gmail.com) |
+| 💼 **LinkedIn** | [harihar-r](https://www.linkedin.com/in/harihar-r) |
+| 🐙 **GitHub** | [HARIHAR1406](https://github.com/HARIHAR1406) |
+
+<br/>
+
+[![Email](https://img.shields.io/badge/Email-harihar.r1406%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:harihar.r1406@gmail.com)
+&nbsp;
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-harihar--r-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harihar-r)
+&nbsp;
+[![GitHub](https://img.shields.io/badge/GitHub-HARIHAR1406-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/HARIHAR1406)
 
 ---
 
