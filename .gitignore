@@ -1,0 +1,25 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Flutter build artifacts (inside Source_Code)
+Source_Code/level_up/.dart_tool/
+Source_Code/level_up/build/
+Source_Code/level_up/.flutter-plugins
+Source_Code/level_up/.flutter-plugins-dependencies
+Source_Code/level_up/android/.gradle/
+Source_Code/level_up/android/local.properties
+Source_Code/level_up/android/key.properties
+Source_Code/level_up/*.jks
+
+# Miscellaneous
+*.log
+*.pyc
+

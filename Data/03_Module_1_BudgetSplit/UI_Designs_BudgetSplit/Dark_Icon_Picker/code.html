@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;min-height:100%;background-color:#10141a;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-container":"#00311e","inverse-primary":"#005bbf","on-surface-variant":"#c2c6d5","tertiary-container":"#ea6767","error":"#ffb4ab","on-tertiary-container":"#5b000d","secondary-fixed-dim":"#60dda2","on-tertiary":"#670211","surface":"#10141a","secondary":"#60dda2","outline-variant":"#424753","surface-variant":"#31353c","secondary-fixed":"#7efabd","primary-fixed-dim":"#acc7ff","on-tertiary-fixed-variant":"#881d24","surface-container-lowest":"#0a0e14","tertiary-fixed":"#ffdad8","on-primary-fixed-variant":"#004492","on-error-container":"#ffdad6","surface-container-high":"#262a31","on-secondary-fixed-variant":"#005234","on-surface":"#dfe2eb","tertiary-fixed-dim":"#ffb3b0","inverse-surface":"#dfe2eb","on-background":"#dfe2eb","on-primary-fixed":"#001a40","on-secondary-fixed":"#002113","on-error":"#690005","primary-fixed":"#d7e2ff","on-primary":"#002f68","surface-container":"#1c2026","primary-container":"#508ff8","surface-container-highest":"#31353c","error-container":"#93000a","on-secondary":"#003823","secondary-container":"#12a56f","primary":"#acc7ff","surface-dim":"#10141a","surface-tint":"#acc7ff","tertiary":"#ffb3b0","surface-bright":"#353940","on-primary-container":"#00285b","on-tertiary-fixed":"#410006","background":"#10141a","inverse-on-surface":"#2d3137","outline":"#8c909e","surface-container-low":"#181c22"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1rem","space-xl":"1.75rem","space-xs":"0.25rem","space-sm":"0.5rem","space-md":"1rem","margin":"1rem","space-lg":"1.25rem"},"fontFamily":{"label-numeric-md":["Space Mono"],"label-ui":["DM Sans"],"label-numeric-sm":["Space Mono"],"label-numeric-lg":["Space Mono"],"headline-md":["DM Sans"],"headline-lg":["DM Sans"],"headline-sm":["DM Sans"],"body-md":["DM Sans"],"body-lg":["DM Sans"],"label-micro":["DM Sans"]},"fontSize":{"label-numeric-md":["20px",{"lineHeight":"26px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-ui":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"label-numeric-sm":["14px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"label-numeric-lg":["28px",{"lineHeight":"34px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-md":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["22px",{"lineHeight":"28px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-sm":["14px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["15px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"label-micro":["10px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface min-h-screen flex justify-center selection:bg-primary-container selection:text-on-primary-container"><div class="w-full max-w-[430px] min-h-screen flex flex-col relative bg-surface"><header class="fixed top-0 w-full max-w-[430px] z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_12px_rgba(0,0,0,0.4)]"><div class="h-[70px] px-gutter flex items-center justify-between"><div class="flex flex-col justify-center"><h1 class="text-headline-lg font-headline-lg text-primary tracking-tight">BudgetSplit</h1><p class="text-label-ui font-label-ui text-outline">Plan once, spend smart</p></div><div class="flex items-center gap-space-sm"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-label-numeric-sm text-label-micro uppercase tracking-wider text-secondary">OFFLINE</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-[70px] px-gutter bg-surface pb-safe"><div class="flex flex-col w-full relative">
+<!-- Dimmed Main Screen Context Behind Bottom Sheet -->
+<div class="flex flex-col gap-space-md opacity-40 blur-[1px] select-none pointer-events-none pb-12">
+<!-- Active Budget Summary Card -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui text-outline uppercase tracking-wider">Total Monthly Pool</span>
+<span class="inline-flex items-center gap-1 font-label-numeric-sm text-label-micro text-secondary bg-surface-container-high px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Balanced
+        </span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface">₹30,000<span class="font-label-numeric-sm text-label-numeric-sm text-outline">.00</span></span>
+<span class="font-label-ui text-label-ui text-outline">4 of 8 categories allocated</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full w-[45%]"></div>
+<div class="bg-secondary h-full w-[25%]"></div>
+<div class="bg-tertiary-container h-full w-[15%]"></div>
+</div>
+</div>
+<!-- Background Categories Preview List -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">Categories</span>
+<span class="font-label-ui text-label-ui text-primary">Manage</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-lg">🏦</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Savings &amp; Investments</p>
+<p class="font-body-md text-label-ui text-outline">Fixed deposit reserve</p>
+</div>
+</div>
+<span class="font-label-numeric-md text-label-numeric-sm text-on-surface">₹12,000</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-lg">🏠</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Apartment Rent</p>
+<p class="font-body-md text-label-ui text-outline">Shared 3-ways split</p>
+</div>
+</div>
+<span class="font-label-numeric-md text-label-numeric-sm text-on-surface">₹10,500</span>
+</div>
+</div>
+</div>
+<!-- Backdrop Wash Overlay -->
+<div class="fixed inset-0 z-40 bg-surface-container-lowest/80 backdrop-blur-sm transition-opacity duration-300" id="sheetBackdrop"></div>
+<!-- Bottom Sheet Container -->
+<div class="fixed inset-x-0 bottom-0 z-50 max-w-[430px] mx-auto bg-surface-container-low rounded-t-[22px] shadow-[0_-8px_32px_rgba(0,0,0,0.65)] flex flex-col pt-2 pb-8 transition-transform duration-300 ease-out transform translate-y-0" id="emojiBottomSheet">
+<!-- Tactile Drag Handle -->
+<div class="w-full flex justify-center py-1">
+<div class="w-9 h-1 rounded-full bg-outline-variant"></div>
+</div>
+<!-- Sheet Header -->
+<div class="px-gutter pt-2 pb-3 flex items-start justify-between">
+<div class="flex flex-col">
+<h2 class="font-headline-lg text-[18px] leading-[24px] font-semibold text-on-surface tracking-tight">Choose Category Icon</h2>
+<p class="font-body-md text-label-ui text-outline mt-0.5">Select an icon for your category</p>
+</div>
+<button aria-label="Close emoji picker" class="w-8 h-8 rounded-full bg-surface-container-high text-outline hover:text-on-surface flex items-center justify-center transition-colors active:scale-95" id="closeSheetBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Dynamic Selection Preview Pill -->
+<div class="px-gutter mb-3">
+<div class="bg-surface-container rounded-xl p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-xl shadow-inner" id="previewIcon">
+            🏦
+          </div>
+<div class="flex flex-col">
+<span class="font-label-ui text-label-micro uppercase tracking-wider text-outline">Selected Symbol</span>
+<span class="font-headline-sm text-headline-sm text-on-surface" id="previewLabel">Banking &amp; Deposits</span>
+</div>
+</div>
+<span class="font-label-numeric-sm text-label-micro text-primary-container bg-surface-container-high px-2 py-1 rounded-full" id="previewTag">#FINANCE</span>
+</div>
+</div>
+<!-- Emoji Grid: Exactly 40 Options (8 Columns x 5 Rows) -->
+<div class="px-gutter flex-1 overflow-y-auto max-h-[300px]">
+<div aria-label="Emoji icons" class="grid grid-cols-8 gap-2 pb-2" id="emojiGrid" role="radiogroup">
+<!-- 1: Selected State -->
+<button aria-checked="true" aria-label="Bank emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-primary-container/20 text-xl shadow-[0_0_0_2px_#508ff8] text-on-surface transition-all active:scale-90" data-name="Banking &amp; Deposits" data-tag="#FINANCE" role="radio" type="button">
+          🏦
+        </button>
+<!-- 2 -->
+<button aria-checked="false" aria-label="Person emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Personal Profile" data-tag="#INDIVIDUAL" role="radio" type="button">
+          👤
+        </button>
+<!-- 3 -->
+<button aria-checked="false" aria-label="Briefcase emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Business &amp; Career" data-tag="#WORK" role="radio" type="button">
+          💼
+        </button>
+<!-- 4 -->
+<button aria-checked="false" aria-label="Bus emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Transit &amp; Commute" data-tag="#COMMUTE" role="radio" type="button">
+          🚌
+        </button>
+<!-- 5 -->
+<button aria-checked="false" aria-label="Bento box emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Meals &amp; Dining" data-tag="#FOOD" role="radio" type="button">
+          🍱
+        </button>
+<!-- 6 -->
+<button aria-checked="false" aria-label="Shopping cart emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Groceries &amp; Market" data-tag="#PANTRY" role="radio" type="button">
+          🛒
+        </button>
+<!-- 7 -->
+<button aria-checked="false" aria-label="House emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Housing &amp; Shelter" data-tag="#HOME" role="radio" type="button">
+          🏠
+        </button>
+<!-- 8 -->
+<button aria-checked="false" aria-label="Mobile phone emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Telecom &amp; Mobile" data-tag="#UTILITIES" role="radio" type="button">
+          📱
+        </button>
+<!-- 9 -->
+<button aria-checked="false" aria-label="Light bulb emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Electric &amp; Power" data-tag="#UTILITIES" role="radio" type="button">
+          💡
+        </button>
+<!-- 10 -->
+<button aria-checked="false" aria-label="Pill emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Health &amp; Pharmacy" data-tag="#MEDICAL" role="radio" type="button">
+          💊
+        </button>
+<!-- 11 -->
+<button aria-checked="false" aria-label="Books emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Books &amp; Reading" data-tag="#STUDY" role="radio" type="button">
+          📚
+        </button>
+<!-- 12 -->
+<button aria-checked="false" aria-label="Clapper board emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Cinema &amp; Shows" data-tag="#LEISURE" role="radio" type="button">
+          🎬
+        </button>
+<!-- 13 -->
+<button aria-checked="false" aria-label="T-shirt emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Apparel &amp; Fashion" data-tag="#STYLE" role="radio" type="button">
+          👕
+        </button>
+<!-- 14 -->
+<button aria-checked="false" aria-label="Fuel pump emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Fuel &amp; Gas" data-tag="#AUTO" role="radio" type="button">
+          ⛽
+        </button>
+<!-- 15 -->
+<button aria-checked="false" aria-label="Airplane emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Airfare &amp; Travel" data-tag="#TRIPS" role="radio" type="button">
+          ✈️
+        </button>
+<!-- 16 -->
+<button aria-checked="false" aria-label="Weight lifting emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Fitness &amp; Gym" data-tag="#WELLNESS" role="radio" type="button">
+          🏋️
+        </button>
+<!-- 17 -->
+<button aria-checked="false" aria-label="Shield emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Insurance &amp; Guard" data-tag="#SAFETY" role="radio" type="button">
+          🛡️
+        </button>
+<!-- 18 -->
+<button aria-checked="false" aria-label="Wrapped gift emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Gifts &amp; Celebrations" data-tag="#EVENTS" role="radio" type="button">
+          🎁
+        </button>
+<!-- 19 -->
+<button aria-checked="false" aria-label="Broom emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Cleaning &amp; Upkeep" data-tag="#MAINTENANCE" role="radio" type="button">
+          🧹
+        </button>
+<!-- 20 -->
+<button aria-checked="false" aria-label="SOS button emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Emergency Fund" data-tag="#URGENT" role="radio" type="button">
+          🆘
+        </button>
+<!-- 21 -->
+<button aria-checked="false" aria-label="Increasing chart emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Stock Market" data-tag="#INVEST" role="radio" type="button">
+          📈
+        </button>
+<!-- 22 -->
+<button aria-checked="false" aria-label="Laptop emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Hardware &amp; Tech" data-tag="#GEAR" role="radio" type="button">
+          💻
+        </button>
+<!-- 23 -->
+<button aria-checked="false" aria-label="Hot beverage emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Coffee &amp; Cafes" data-tag="#DAILY" role="radio" type="button">
+          ☕
+        </button>
+<!-- 24 -->
+<button aria-checked="false" aria-label="Video game controller emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Games &amp; Gaming" data-tag="#PLAY" role="radio" type="button">
+          🎮
+        </button>
+<!-- 25 -->
+<button aria-checked="false" aria-label="Graduation cap emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Tuition &amp; Courses" data-tag="#GROWTH" role="radio" type="button">
+          🎓
+        </button>
+<!-- 26 -->
+<button aria-checked="false" aria-label="Receipt emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Taxes &amp; Invoices" data-tag="#COMPLIANCE" role="radio" type="button">
+          🧾
+        </button>
+<!-- 27 -->
+<button aria-checked="false" aria-label="Hospital emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Hospital Care" data-tag="#CLINIC" role="radio" type="button">
+          🏥
+        </button>
+<!-- 28 -->
+<button aria-checked="false" aria-label="Paw prints emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Pets &amp; Veterinary" data-tag="#PETS" role="radio" type="button">
+          🐾
+        </button>
+<!-- 29 -->
+<button aria-checked="false" aria-label="Automobile emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Car Ownership" data-tag="#VEHICLE" role="radio" type="button">
+          🚗
+        </button>
+<!-- 30 -->
+<button aria-checked="false" aria-label="House with garden emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Real Estate" data-tag="#PROPERTY" role="radio" type="button">
+          🏡
+        </button>
+<!-- 31 -->
+<button aria-checked="false" aria-label="Money bag emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Cash Reserves" data-tag="#CASH" role="radio" type="button">
+          💰
+        </button>
+<!-- 32 -->
+<button aria-checked="false" aria-label="Package box emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Deliveries &amp; Postage" data-tag="#SHIPPING" role="radio" type="button">
+          📦
+        </button>
+<!-- 33 -->
+<button aria-checked="false" aria-label="Credit card emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Card Payments" data-tag="#CREDIT" role="radio" type="button">
+          💳
+        </button>
+<!-- 34 -->
+<button aria-checked="false" aria-label="Coin emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Coins &amp; Pocket Change" data-tag="#SPARE" role="radio" type="button">
+          🪙
+        </button>
+<!-- 35 -->
+<button aria-checked="false" aria-label="Shopping bags emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Retail Shopping" data-tag="#RETAIL" role="radio" type="button">
+          🛍️
+        </button>
+<!-- 36 -->
+<button aria-checked="false" aria-label="Beach umbrella emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Vacation &amp; Respite" data-tag="#GETAWAY" role="radio" type="button">
+          🏖️
+        </button>
+<!-- 37 -->
+<button aria-checked="false" aria-label="Direct hit target emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Financial Goals" data-tag="#TARGETS" role="radio" type="button">
+          🎯
+        </button>
+<!-- 38 -->
+<button aria-checked="false" aria-label="Toolbox emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Repairs &amp; Tooling" data-tag="#HARDWARE" role="radio" type="button">
+          🧰
+        </button>
+<!-- 39 -->
+<button aria-checked="false" aria-label="Seedling sprout emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Sustainable &amp; Green" data-tag="#ECO" role="radio" type="button">
+          🌱
+        </button>
+<!-- 40 -->
+<button aria-checked="false" aria-label="Pencil emoji" class="emoji-cell aspect-square flex items-center justify-center rounded-xl bg-surface-container text-xl text-on-surface hover:bg-surface-container-high transition-all active:scale-90" data-name="Custom Notes" data-tag="#EDIT" role="radio" type="button">
+          ✏️
+        </button>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="px-gutter pt-3 mt-1 flex items-center gap-space-sm">
+<button class="w-1/3 py-3 rounded-xl bg-surface-container text-outline hover:text-on-surface font-headline-sm text-headline-sm transition-all active:scale-98 flex items-center justify-center" id="cancelSheetBtn" type="button">
+        Cancel
+      </button>
+<button class="w-2/3 py-3 rounded-xl bg-primary-container text-on-primary font-headline-sm text-headline-sm font-semibold transition-all shadow-md active:scale-98 flex items-center justify-center gap-2" id="confirmIconBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Select Icon</span>
+</button>
+</div>
+<!-- Subtle Floating Feedback Toast (Hidden initially) -->
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-surface-container-highest text-on-surface px-4 py-2 rounded-full font-label-ui text-label-ui shadow-xl flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-200" id="selectionToast">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Icon updated</span>
+</div>
+</div>
+</div>
+<script>
+  (() => {
+    const cells = document.querySelectorAll('.emoji-cell');
+    const previewIcon = document.getElementById('previewIcon');
+    const previewLabel = document.getElementById('previewLabel');
+    const previewTag = document.getElementById('previewTag');
+    const confirmBtn = document.getElementById('confirmIconBtn');
+    const toast = document.getElementById('selectionToast');
+    const bottomSheet = document.getElementById('emojiBottomSheet');
+    const backdrop = document.getElementById('sheetBackdrop');
+    const closeBtn = document.getElementById('closeSheetBtn');
+    const cancelBtn = document.getElementById('cancelSheetBtn');
+
+    let currentSelectedEmoji = '🏦';
+
+    cells.forEach((cell) => {
+      cell.addEventListener('click', () => {
+        cells.forEach((c) => {
+          c.setAttribute('aria-checked', 'false');
+          c.classList.remove('bg-primary-container/20', 'shadow-[0_0_0_2px_#508ff8]');
+          c.classList.add('bg-surface-container');
+        });
+
+        cell.setAttribute('aria-checked', 'true');
+        cell.classList.remove('bg-surface-container');
+        cell.classList.add('bg-primary-container/20', 'shadow-[0_0_0_2px_#508ff8]');
+
+        currentSelectedEmoji = cell.textContent.trim();
+        const label = cell.getAttribute('data-name') || 'Selected Icon';
+        const tag = cell.getAttribute('data-tag') || '#TAG';
+
+        if (previewIcon) previewIcon.textContent = currentSelectedEmoji;
+        if (previewLabel) previewLabel.textContent = label;
+        if (previewTag) previewTag.textContent = tag;
+      });
+    });
+
+    const triggerToast = (msg) => {
+      if (!toast) return;
+      toast.querySelector('span:last-child').textContent = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 1600);
+    };
+
+    const closeSheet = () => {
+      bottomSheet.classList.add('translate-y-full');
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        bottomSheet.classList.remove('translate-y-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      }, 1800);
+    };
+
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', () => {
+        triggerToast(`Applied ${currentSelectedEmoji} to category`);
+      });
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeSheet);
+    if (cancelBtn) cancelBtn.addEventListener('click', closeSheet);
+    if (backdrop) backdrop.addEventListener('click', closeSheet);
+  })();
+</script></main></div></body></html>

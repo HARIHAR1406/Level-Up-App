@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;min-height:100%;background-color:#10141a;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-container":"#00311e","inverse-primary":"#005bbf","on-surface-variant":"#c2c6d5","tertiary-container":"#ea6767","error":"#ffb4ab","on-tertiary-container":"#5b000d","secondary-fixed-dim":"#60dda2","on-tertiary":"#670211","surface":"#10141a","secondary":"#60dda2","outline-variant":"#424753","surface-variant":"#31353c","secondary-fixed":"#7efabd","primary-fixed-dim":"#acc7ff","on-tertiary-fixed-variant":"#881d24","surface-container-lowest":"#0a0e14","tertiary-fixed":"#ffdad8","on-primary-fixed-variant":"#004492","on-error-container":"#ffdad6","surface-container-high":"#262a31","on-secondary-fixed-variant":"#005234","on-surface":"#dfe2eb","tertiary-fixed-dim":"#ffb3b0","inverse-surface":"#dfe2eb","on-background":"#dfe2eb","on-primary-fixed":"#001a40","on-secondary-fixed":"#002113","on-error":"#690005","primary-fixed":"#d7e2ff","on-primary":"#002f68","surface-container":"#1c2026","primary-container":"#508ff8","surface-container-highest":"#31353c","error-container":"#93000a","on-secondary":"#003823","secondary-container":"#12a56f","primary":"#acc7ff","surface-dim":"#10141a","surface-tint":"#acc7ff","tertiary":"#ffb3b0","surface-bright":"#353940","on-primary-container":"#00285b","on-tertiary-fixed":"#410006","background":"#10141a","inverse-on-surface":"#2d3137","outline":"#8c909e","surface-container-low":"#181c22"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1rem","space-xl":"1.75rem","space-xs":"0.25rem","space-sm":"0.5rem","space-md":"1rem","margin":"1rem","space-lg":"1.25rem"},"fontFamily":{"label-numeric-md":["Space Mono"],"label-ui":["DM Sans"],"label-numeric-sm":["Space Mono"],"label-numeric-lg":["Space Mono"],"headline-md":["DM Sans"],"headline-lg":["DM Sans"],"headline-sm":["DM Sans"],"body-md":["DM Sans"],"body-lg":["DM Sans"],"label-micro":["DM Sans"]},"fontSize":{"label-numeric-md":["20px",{"lineHeight":"26px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-ui":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"label-numeric-sm":["14px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"label-numeric-lg":["28px",{"lineHeight":"34px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-md":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["22px",{"lineHeight":"28px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-sm":["14px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["15px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"label-micro":["10px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface min-h-screen flex justify-center selection:bg-primary-container selection:text-on-primary-container"><div class="w-full max-w-[430px] min-h-screen flex flex-col relative bg-surface"><header class="fixed top-0 w-full max-w-[430px] z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_12px_rgba(0,0,0,0.4)]"><div class="h-[70px] px-gutter flex items-center justify-between"><div class="flex flex-col justify-center"><h1 class="text-headline-lg font-headline-lg text-primary tracking-tight">BudgetSplit</h1><p class="text-label-ui font-label-ui text-outline">Plan once, spend smart</p></div><div class="flex items-center gap-space-sm"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-label-numeric-sm text-label-micro uppercase tracking-wider text-secondary">OFFLINE</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-[70px] px-gutter bg-surface pb-safe"><div class="flex flex-col w-full relative min-h-full select-none pb-4">
+<!-- BACKGROUND DASHBOARD (Dimmed & Blurred Layer) -->
+<div aria-hidden="true" class="flex flex-col gap-space-md opacity-40 blur-[2px] pointer-events-none transition-all duration-300">
+<!-- Quick Budget Overview Card -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex justify-between items-start">
+<span class="text-body-md font-body-md text-on-surface-variant">November Allocation</span>
+<span class="text-label-micro font-label-micro uppercase tracking-wider bg-surface-container-high text-secondary px-2 py-0.5 rounded-full">Active</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div>
+<span class="text-label-ui font-label-ui text-outline block">Total Budget</span>
+<span class="text-label-numeric-lg font-label-numeric-lg text-on-surface">₹30,000</span>
+</div>
+<div class="text-right">
+<span class="text-label-ui font-label-ui text-outline block">Planned</span>
+<span class="text-label-numeric-md font-label-numeric-md text-secondary">₹25,500</span>
+</div>
+</div>
+<!-- Stacked Metric Distribution Bar -->
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden flex mt-2">
+<div class="h-full bg-primary" style="width: 20%;"></div>
+<div class="h-full bg-secondary" style="width: 25%;"></div>
+<div class="h-full bg-primary-container" style="width: 30%;"></div>
+<div class="h-full bg-tertiary-container" style="width: 10%;"></div>
+</div>
+</div>
+<!-- Category Tiles (Teaser Cards) -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[16px]">savings</span>
+<span class="text-headline-sm font-headline-sm text-on-surface">Savings</span>
+</div>
+<span class="text-label-numeric-md font-label-numeric-md text-on-surface mt-1">₹6,000</span>
+<span class="text-label-micro font-label-micro text-outline">20% of budget</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">wallet</span>
+<span class="text-headline-sm font-headline-sm text-on-surface">Personal</span>
+</div>
+<span class="text-label-numeric-md font-label-numeric-md text-on-surface mt-1">₹7,500</span>
+<span class="text-label-micro font-label-micro text-outline">25% of budget</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-primary-container">
+<span class="material-symbols-outlined text-[16px]">business_center</span>
+<span class="text-headline-sm font-headline-sm text-on-surface">Business</span>
+</div>
+<span class="text-label-numeric-md font-label-numeric-md text-on-surface mt-1">₹9,000</span>
+<span class="text-label-micro font-label-micro text-outline">30% of budget</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">directions_car</span>
+<span class="text-headline-sm font-headline-sm text-on-surface">Transport</span>
+</div>
+<span class="text-label-numeric-md font-label-numeric-md text-on-surface mt-1">₹3,000</span>
+<span class="text-label-micro font-label-micro text-outline">10% of budget</span>
+</div>
+</div>
+</div>
+<!-- MODAL BACKDROP OVERLAY -->
+<div class="fixed inset-0 bg-[#0a0e14]/80 backdrop-blur-[6px] z-40 transition-opacity duration-300" id="export-backdrop"></div>
+<!-- EXPORT BOTTOM SHEET CONTAINER -->
+<div class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto z-50 bg-surface-container rounded-t-[22px] px-gutter pt-3 pb-8 flex flex-col shadow-[0_-8px_32px_rgba(0,0,0,0.65)] transform transition-transform duration-300 ease-out" id="export-bottom-sheet">
+<!-- Drag Handle -->
+<div class="w-full flex justify-center py-1 mb-2">
+<div class="w-9 h-1 rounded-full bg-surface-bright"></div>
+</div>
+<!-- Sheet Header Row -->
+<div class="flex items-start justify-between gap-space-sm mb-space-md">
+<div class="flex flex-col min-w-0">
+<h2 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">Export Budget Plan</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-0.5">Your budget breakdown is ready to share.</p>
+</div>
+<button aria-label="Close export sheet" class="w-9 h-9 shrink-0 rounded-full bg-surface-container-high hover:bg-surface-bright active:scale-95 flex items-center justify-center transition-all duration-150 text-outline hover:text-on-surface" id="close-sheet-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Monospace Export Terminal Preview -->
+<div class="relative w-full rounded-xl bg-surface-container-lowest p-space-md overflow-hidden flex flex-col shadow-inner mb-space-md">
+<!-- Watermark / Micro Header Ribbon -->
+<div class="flex items-center justify-between pb-2 mb-2 bg-surface-container-low/40 -mx-4 -mt-4 px-4 pt-3">
+<div class="flex items-center gap-1.5">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-label-micro font-label-micro text-outline tracking-wider uppercase">ASCII Summary Format</span>
+</div>
+<span class="text-label-micro font-label-micro text-outline">Plaintext</span>
+</div>
+<!-- Raw Formatted Ledger -->
+<div class="overflow-x-auto overflow-y-auto max-h-[220px] scrollbar-none">
+<pre class="font-label-numeric-sm text-label-numeric-sm text-on-surface leading-snug whitespace-pre select-text" id="clipboard-target"><span class="text-primary font-bold">BudgetSplit</span> — November Salary
+────────────────────────────
+Total Budget : <span class="text-on-surface font-semibold">₹30,000</span>
+
+Categories     %      Amount
+────────────────────────────
+Savings       20%     ₹6,000
+Personal      25%     ₹7,500
+Business      30%     ₹9,000
+Transport     10%     ₹3,000
+────────────────────────────
+<span class="text-secondary font-semibold">Total         85%    ₹25,500</span>
+
+Generated by BudgetSplit</pre>
+</div>
+<!-- Corner Subtle Glow Highlight -->
+<div class="absolute -right-8 -bottom-8 w-24 h-24 bg-primary/10 rounded-full blur-xl pointer-events-none"></div>
+</div>
+<!-- Primary Action: Copy Button -->
+<div class="relative w-full flex flex-col items-center">
+<button class="w-full h-12 bg-secondary text-on-secondary-container hover:brightness-105 active:scale-[0.98] font-headline-md text-headline-md rounded-xl flex items-center justify-center gap-2.5 transition-all duration-150 shadow-md" id="copy-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+<span>Copy to Clipboard</span>
+</button>
+<!-- Toast Feedback State (Integrated Floating Anchor) -->
+<div class="absolute -top-12 z-20 pointer-events-none opacity-0 translate-y-2 transition-all duration-300 ease-out flex items-center gap-2 bg-surface-container-high text-on-surface px-3.5 py-1.5 rounded-full shadow-xl" id="toast-success">
+<div class="w-4 h-4 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[13px] text-on-secondary-container font-bold">check</span>
+</div>
+<span class="text-label-ui font-label-ui text-on-surface font-medium">Copied to clipboard</span>
+</div>
+</div>
+</div>
+<script>
+    (function() {
+      const copyBtn = document.getElementById('copy-btn');
+      const toast = document.getElementById('toast-success');
+      const closeBtn = document.getElementById('close-sheet-btn');
+      const sheet = document.getElementById('export-bottom-sheet');
+      const backdrop = document.getElementById('export-backdrop');
+      const rawTextTarget = document.getElementById('clipboard-target');
+
+      const plainTextPayload = `BudgetSplit — November Salary\n────────────────────────────\nTotal Budget : ₹30,000\n\nCategories     %      Amount\n────────────────────────────\nSavings       20%     ₹6,000\nPersonal      25%     ₹7,500\nBusiness      30%     ₹9,000\nTransport     10%     ₹3,000\n────────────────────────────\nTotal         85%    ₹25,500\n\nGenerated by BudgetSplit`;
+
+      let timeoutHandle = null;
+
+      function triggerToast() {
+        if (toast) {
+          toast.classList.remove('opacity-0', 'translate-y-2');
+          toast.classList.add('opacity-100', 'translate-y-0');
+
+          if (timeoutHandle) clearTimeout(timeoutHandle);
+
+          timeoutHandle = setTimeout(() => {
+            toast.classList.add('opacity-0', 'translate-y-2');
+            toast.classList.remove('opacity-100', 'translate-y-0');
+          }, 2400);
+        }
+      }
+
+      function dismissSheet() {
+        if (sheet && backdrop) {
+          sheet.style.transform = 'translateY(100%)';
+          backdrop.style.opacity = '0';
+          setTimeout(() => {
+            sheet.style.display = 'none';
+            backdrop.style.display = 'none';
+          }, 300);
+        }
+      }
+
+      if (copyBtn) {
+        copyBtn.addEventListener('click', async () => {
+          try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              await navigator.clipboard.writeText(plainTextPayload);
+            }
+          } catch (e) {
+            // Fallback gracefully if permissions restrict direct clipboard
+          }
+          triggerToast();
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', dismissSheet);
+      }
+
+      if (backdrop) {
+        backdrop.addEventListener('click', dismissSheet);
+      }
+    })();
+  </script>
+</div></main></div></body></html>

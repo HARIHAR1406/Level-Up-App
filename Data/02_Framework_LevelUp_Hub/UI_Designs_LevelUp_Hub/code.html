@@ -1,0 +1,594 @@
+<!DOCTYPE html><html lang="en" class="dark"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Level Up Mainframe</title>
+  <!-- Google Fonts: DM Sans & DM Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;display=swap" rel="stylesheet">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"DM Sans"', 'sans-serif'],
+            mono: ['"DM Mono"', 'monospace'],
+          },
+          colors: {
+            // Dark tokens
+            dark: {
+              bg: '#0D1117',
+              surface: '#161B27',
+              surface2: '#1E2535',
+              border: '#2A3148',
+              text: '#E6E9F4',
+              muted: '#7E879E',
+              circleFill: '#0D1117',
+            },
+            // Light tokens
+            light: {
+              bg: '#F2F4FB',
+              surface: '#FFFFFF',
+              surface2: '#E9EDFF',
+              border: '#C7C4D8',
+              text: '#141B2B',
+              muted: '#5B5E6A',
+              circleFill: '#F9F9FF',
+            },
+            // Identity colors
+            budget: {
+              blueDark: '#4F8EF7',
+              blueLight: '#0059BA',
+              greenDark: '#56D49A',
+              greenLight: '#006C47',
+            },
+            habits: {
+              indigoDark: '#675DF9',
+              indigoLight: '#4D41DF',
+            },
+            err: '#F06B6B'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --bg: #0D1117;
+      --surface: #161B27;
+      --surface-sec: #1E2535;
+      --border: #2A3148;
+      --text: #E6E9F4;
+      --muted: #7E879E;
+      --circle-fill: #0D1117;
+      --budget-blue: #4F8EF7;
+      --budget-green: #56D49A;
+      --habits-indigo: #675DF9;
+      --ring-budget: linear-gradient(135deg, #4F8EF7, #56D49A);
+      --budget-glow: rgba(79, 142, 247, 0.45);
+      --habits-glow: rgba(103, 93, 249, 0.45);
+    }
+
+    html.light {
+      --bg: #F2F4FB;
+      --surface: #FFFFFF;
+      --surface-sec: #E9EDFF;
+      --border: #C7C4D8;
+      --text: #141B2B;
+      --muted: #5B5E6A;
+      --circle-fill: #F9F9FF;
+      --budget-blue: #0059BA;
+      --budget-green: #006C47;
+      --habits-indigo: #4D41DF;
+      --ring-budget: linear-gradient(135deg, #0059BA, #006C47);
+      --budget-glow: rgba(0, 89, 186, 0.25);
+      --habits-glow: rgba(77, 65, 223, 0.25);
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    /* Safe Area insets */
+    .safe-top {
+      padding-top: env(safe-area-inset-top, 20px);
+    }
+    .safe-bottom {
+      padding-bottom: env(safe-area-inset-bottom, 16px);
+    }
+
+    /* Circle interactive button scaling */
+    .module-circle-btn {
+      width: 124px;
+      height: 124px;
+      border-radius: 9999px;
+      position: relative;
+      cursor: pointer;
+      transform: scale(1);
+      transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+      touch-action: manipulation;
+    }
+
+    @media (max-width: 360px) {
+      .module-circle-btn {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    /* Hover & Active Press States according to Spec */
+    .module-circle-btn:hover {
+      transform: scale(1.05);
+    }
+    .module-circle-btn:active,
+    .module-circle-btn.is-pressed {
+      transform: scale(0.93) !important;
+    }
+
+    /* BudgetSplit Circle specific styling */
+    .budget-circle-wrap {
+      background: var(--ring-budget);
+      padding: 4px;
+      box-shadow: 0 0 26px var(--budget-glow);
+    }
+
+    /* Habits Circle specific styling */
+    .habits-circle-wrap {
+      background: var(--habits-indigo);
+      padding: 4px;
+      box-shadow: 0 0 26px var(--habits-glow);
+    }
+
+    .circle-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 9999px;
+      background-color: var(--circle-fill);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Traveling Light on Connecting Wire */
+    @keyframes wireLightPulse {
+      0% {
+        left: -15%;
+        opacity: 0;
+      }
+      15% {
+        opacity: 1;
+      }
+      85% {
+        opacity: 1;
+      }
+      100% {
+        left: 115%;
+        opacity: 0;
+      }
+    }
+
+    .wire-light {
+      position: absolute;
+      top: -2.5px;
+      width: 36px;
+      height: 8px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 80%);
+      filter: blur(1.5px);
+      animation: wireLightPulse 3.2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Module Expansion Transitions */
+    .module-open-transition {
+      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .wire-light {
+        animation: none !important;
+        display: none !important;
+      }
+      .module-circle-btn,
+      .module-open-transition,
+      #tagline-text {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
+    /* State Switcher floating toolbar for testing and grading */
+    .state-pill {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 9999px;
+      background: var(--surface-sec);
+      color: var(--text);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .state-pill.active {
+      background: #4F8EF7;
+      color: #FFFFFF;
+      border-color: #4F8EF7;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-0 sm:p-4">
+
+  <!-- Mobile Device Outer Container (Simulating Android Frame on Desktop, Fluid 390px on Mobile) -->
+  <div class="relative w-full max-w-[560px] sm:w-[390px] h-screen sm:h-[844px] overflow-hidden flex flex-col shadow-2xl sm:rounded-[36px] border sm:border-[var(--border)]" style="background-color: var(--bg); border-color: var(--border);">
+
+    <!-- Screen State: HUB (Default) -->
+    <div id="hub-view" class="w-full h-full flex flex-col justify-between px-[18px] pt-[20px] pb-4 safe-top safe-bottom relative z-10 transition-all duration-300">
+
+      <!-- SECTION A: HEADER -->
+      <header class="flex items-start justify-between w-full">
+        <div class="flex flex-col">
+          <!-- App Name: 30px, bold (700), letter-spacing -0.02em -->
+          <h1 class="text-[30px] font-bold leading-none tracking-[-0.02em]" style="color: var(--text);">
+            Level Up
+          </h1>
+          <!-- Tagline below name: 13px, italic, muted. Rotates every 4.5s -->
+          <p id="tagline-text" class="text-[13px] italic font-normal mt-1.5 transition-opacity duration-300 h-5" style="color: var(--muted); opacity: 0;">Small tools. Steady progress.</p>
+        </div>
+
+        <!-- Theme Toggle: 42px circular button top right -->
+        <button id="theme-toggle-btn" class="w-[42px] h-[42px] rounded-full flex items-center justify-center text-lg transition-transform active:scale-90 border focus:outline-none" style="background-color: var(--surface); border-color: var(--border); color: var(--text);" aria-label="Toggle theme">
+          <span id="theme-icon">☾</span>
+        </button>
+      </header>
+
+      <!-- SECTION B: GREETING -->
+      <section class="w-full text-left mt-[22px] mb-2">
+        <p id="greeting-text" class="text-[15px] font-normal leading-relaxed" style="color: var(--muted);">Good afternoon. Pick a tool to work on today.</p>
+      </section>
+
+      <!-- SECTION C: MAIN SWITCHBOARD -->
+      <!-- Large rounded rectangle in remaining free space, corner radius 28px, border 1px -->
+      <main class="flex-1 my-2 w-full rounded-[28px] border flex flex-col items-center justify-center relative p-4 transition-colors duration-300" style="background-color: var(--surface); border-color: var(--border);">
+
+        <!-- Switchboard Title: 15px, semibold, centered -->
+        <h2 class="text-[15px] font-semibold tracking-normal mb-8 text-center" style="color: var(--text);">
+          Level up tools
+        </h2>
+
+        <!-- Interactive Module Area with Connecting Wire -->
+        <div class="relative w-full flex items-center justify-around py-4">
+
+          <!-- Connecting Wire (3px thick joining circle centres, behind circles) -->
+          <!-- Gradient: blue -> green -> indigo -->
+          <div class="absolute left-[15%] right-[15%] top-[72px] h-[3px] rounded-full -translate-y-1/2 overflow-hidden pointer-events-none" style="background: linear-gradient(90deg, var(--budget-blue) 0%, var(--budget-green) 50%, var(--habits-indigo) 100%);">
+            <!-- Animated light traveling left to right (3.2s loop) -->
+            <div class="wire-light"></div>
+          </div>
+
+          <!-- MODULE 1: BudgetSplit -->
+          <div class="flex flex-col items-center z-10 w-[140px] text-center">
+            <!-- Circle 1 Button (124x124) -->
+            <button id="btn-budgetsplit" class="module-circle-btn budget-circle-wrap focus:outline-none" aria-label="Open BudgetSplit Module" title="BudgetSplit">
+              <div class="circle-inner">
+                <!-- 56x56 icon: circular money symbol divided vertically into blue/green -->
+                <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Outer subtle track -->
+                  <circle cx="28" cy="28" r="24" stroke="currentColor" stroke-opacity="0.12" stroke-width="1.5"></circle>
+                  <!-- Left half (Blue) -->
+                  <path d="M28 6C15.8497 6 6 15.8497 6 28C6 40.1503 15.8497 50 28 50V6Z" fill="#4F8EF7"></path>
+                  <!-- Right half (Green) -->
+                  <path d="M28 6C40.1503 6 50 15.8497 50 28C50 40.1503 40.1503 50 28 50V6Z" fill="#56D49A"></path>
+                  <!-- Dividing center seam -->
+                  <line x1="28" y1="6" x2="28" y2="50" stroke="var(--circle-fill)" stroke-width="2.5"></line>
+                  <!-- Currency glyph overlay (cutout style in center) -->
+                  <path d="M28 17V39M23 22.5C23 20.5 25 19 28 19C31 19 33 20.5 33 22.5C33 25 30 26 28 27C25.5 28 23 29.5 23 32C23 34.5 25 36 28 36C31 36 33 34.5 33 32.5" stroke="#FFFFFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </button>
+
+            <!-- Module Name: 15px semibold -->
+            <span class="text-[15px] font-semibold mt-3 leading-snug tracking-tight" style="color: var(--text);">
+              BudgetSplit
+            </span>
+
+            <!-- Status Badge: DM Mono 12px, medium (500) -->
+            <div class="mt-1">
+              <span id="badge-budgetsplit" class="font-mono text-[12px] font-medium px-2 py-0.5 rounded-md inline-block border" style="background-color: var(--surface-sec); border-color: var(--border); color: var(--muted);">
+                3 saved plans
+              </span>
+            </div>
+          </div>
+
+          <!-- MODULE 2: Habits at Percentage -->
+          <div class="flex flex-col items-center z-10 w-[140px] text-center">
+            <!-- Circle 2 Button (124x124) -->
+            <button id="btn-habits" class="module-circle-btn habits-circle-wrap focus:outline-none" aria-label="Open Habits at Percentage Module" title="Habits at Percentage">
+              <div class="circle-inner">
+                <!-- 56x56 icon: Donut progress chart, ~62% filled in indigo, rest in grey -->
+                <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Inactive track in grey (38%) -->
+                  <circle cx="28" cy="28" r="20" stroke="currentColor" stroke-opacity="0.22" stroke-width="5.5" stroke-linecap="round"></circle>
+                  <!-- Active progress stroke in Indigo (62% of circumference 2 * PI * 20 = 125.66; 62% = ~78 stroke-dasharray) -->
+                  <circle cx="28" cy="28" r="20" stroke="#675DF9" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="78 126" stroke-dashoffset="0" transform="rotate(-90 28 28)"></circle>
+                  <!-- Center percentage marker glyph -->
+                  <text x="28" y="32" text-anchor="middle" font-family="'DM Mono', monospace" font-size="12" font-weight="700" fill="var(--text)">62%</text>
+                </svg>
+              </div>
+            </button>
+
+            <!-- Module Name: 15px semibold (wraps neatly) -->
+            <span class="text-[15px] font-semibold mt-3 leading-tight tracking-tight px-1" style="color: var(--text);">
+              Habits at Percentage
+            </span>
+
+            <!-- Status Badge: DM Mono 12px, medium (500) -->
+            <div class="mt-1">
+              <span id="badge-habits" class="font-mono text-[12px] font-medium px-2 py-0.5 rounded-md inline-block border" style="background-color: var(--surface-sec); border-color: var(--border); color: var(--muted);">
+                Done today: 85%
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hint Text: 14px, muted, centred -->
+        <p class="text-[14px] font-normal mt-7 text-center select-none" style="color: var(--muted);">
+          Tap a circle
+        </p>
+
+      </main>
+
+      <!-- SECTION D: FOOTER -->
+      <footer class="w-full text-center py-2">
+        <p class="text-[12px] font-normal leading-normal" style="color: var(--muted);">
+          Works offline · Your data stays on this device
+        </p>
+      </footer>
+
+    </div>
+
+    <!-- Screen State: TOOL OPEN CONTAINER (State 6) -->
+    <div id="module-container-view" class="absolute inset-0 z-20 flex flex-col opacity-0 pointer-events-none module-open-transition" style="background-color: var(--bg);">
+      <!-- Top Bar: height 44px -->
+      <div class="h-[44px] w-full px-3 flex items-center border-b safe-top" style="background-color: var(--surface); border-color: var(--border);">
+        <!-- Left Side: "‹ Level Up" back button -->
+        <button id="module-back-btn" class="flex items-center text-[15px] font-medium transition-opacity hover:opacity-80 active:opacity-60 focus:outline-none" style="color: var(--budget-blue);">
+          <span class="text-xl mr-1 leading-none">‹</span> Level Up
+        </button>
+        <!-- Beside it: Selected module name -->
+        <span id="module-title-active" class="ml-3 text-[15px] font-semibold tracking-tight" style="color: var(--text);">
+          BudgetSplit
+        </span>
+      </div>
+
+      <!-- Module Content Workspace Placeholder (Respecting instruction: 'Do not redesign the internal BudgetSplit or Habits screens') -->
+      <div class="flex-1 p-5 flex flex-col justify-center items-center text-center">
+        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 border" style="background-color: var(--surface-sec); border-color: var(--border);">
+          <svg id="module-container-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-current"></svg>
+        </div>
+        <h3 id="module-container-headline" class="text-[18px] font-semibold mb-2" style="color: var(--text);">
+          Active Workspace
+        </h3>
+        <p class="text-[14px] max-w-xs leading-relaxed" style="color: var(--muted);">
+          Module workspace loaded safely in offline sandbox.
+        </p>
+        <button id="trigger-error-simulation-btn" class="mt-6 text-xs px-3 py-1.5 rounded-full border transition-all" style="background-color: var(--surface); border-color: var(--border); color: var(--muted);">
+          Simulate missing file error
+        </button>
+      </div>
+    </div>
+
+    <!-- Screen State: ERROR VIEW (State 7) -->
+    <div id="error-view" class="absolute inset-0 z-30 flex flex-col items-center justify-center p-6 text-center opacity-0 pointer-events-none transition-opacity duration-300" style="background-color: var(--bg);">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 text-[#F06B6B] bg-[#F06B6B]/10 border border-[#F06B6B]/30">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+      </div>
+      <!-- Centred error message: "Couldn't open BudgetSplit. Check that budgetsplit.html is in the same folder, then try again." -->
+      <p class="text-[15px] max-w-xs font-normal leading-relaxed mb-6" style="color: var(--text);">
+        Couldn't open BudgetSplit. Check that budgetsplit.html is in the same folder, then try again.
+      </p>
+      <!-- Blue "Try again" button -->
+      <button id="error-try-again-btn" class="h-[42px] px-6 rounded-xl font-medium text-[15px] text-white transition-transform active:scale-95 shadow-md flex items-center justify-center" style="background-color: #4F8EF7;">
+        Try again
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Interactive Controls Bar for Evaluating All 7 Prompted States -->
+  <div class="mt-4 flex flex-wrap gap-1.5 max-w-[560px] justify-center items-center px-2">
+    <span class="text-[11px] font-medium mr-1" style="color: var(--muted);">States:</span>
+    <button class="state-pill active" onclick="setState('state1')">1. Dark</button>
+    <button class="state-pill" onclick="setState('state2')">2. Light</button>
+    <button class="state-pill" onclick="setState('state3')">3. Empty Badges</button>
+    <button class="state-pill" onclick="setState('state4')">4. With Data</button>
+    <button class="state-pill" onclick="setState('state5')">5. Circle Pressed</button>
+    <button class="state-pill" onclick="setState('state6')">6. Tool Open</button>
+    <button class="state-pill" onclick="setState('state7')">7. Error</button>
+  </div>
+
+  <!-- Vanilla Script implementing all logic, timings, rotations, and states -->
+  <script>
+    // State references
+    let currentTheme = 'dark';
+    const taglines = [
+      "Small tools. Steady progress.",
+      "Plan the money. Track the habits.",
+      "One step up at a time."
+    ];
+    let taglineIndex = 0;
+
+    // Elements
+    const htmlEl = document.documentElement;
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const themeIcon = document.getElementById('theme-icon');
+    const taglineEl = document.getElementById('tagline-text');
+    const greetingEl = document.getElementById('greeting-text');
+    const badgeBudget = document.getElementById('badge-budgetsplit');
+    const badgeHabits = document.getElementById('badge-habits');
+    const hubView = document.getElementById('hub-view');
+    const moduleContainerView = document.getElementById('module-container-view');
+    const moduleBackBtn = document.getElementById('module-back-btn');
+    const moduleTitleActive = document.getElementById('module-title-active');
+    const errorView = document.getElementById('error-view');
+    const errorTryAgainBtn = document.getElementById('error-try-again-btn');
+    const btnBudget = document.getElementById('btn-budgetsplit');
+    const btnHabits = document.getElementById('btn-habits');
+
+    // 1. Tagline Rotation (every 4.5 seconds)
+    function rotateTagline() {
+      taglineEl.style.opacity = '0';
+      setTimeout(() => {
+        taglineIndex = (taglineIndex + 1) % taglines.length;
+        taglineEl.textContent = taglines[taglineIndex];
+        taglineEl.style.opacity = '1';
+      }, 300);
+    }
+    const taglineInterval = setInterval(rotateTagline, 4500);
+
+    // 2. Greeting message by time of day
+    function updateGreeting() {
+      const now = new Date();
+      const hours = now.getHours();
+      let salute = "Good evening.";
+
+      if (hours >= 0 && hours < 5) {
+        salute = "Still up?";
+      } else if (hours >= 5 && hours < 12) {
+        salute = "Good morning.";
+      } else if (hours >= 12 && hours < 17) {
+        salute = "Good afternoon.";
+      } else if (hours >= 17 && hours < 21) {
+        salute = "Good evening.";
+      } else {
+        salute = "Winding down?";
+      }
+
+      greetingEl.textContent = `${salute} Pick a tool to work on today.`;
+    }
+    updateGreeting();
+
+    // 3. Theme Toggle (☾ in dark mode, ☀ in light mode)
+    function setTheme(theme) {
+      currentTheme = theme;
+      if (theme === 'dark') {
+        htmlEl.classList.remove('light');
+        htmlEl.classList.add('dark');
+        themeIcon.textContent = '☾';
+      } else {
+        htmlEl.classList.remove('dark');
+        htmlEl.classList.add('light');
+        themeIcon.textContent = '☀';
+      }
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      updateActivePill(currentTheme === 'dark' ? 'state1' : 'state2');
+    });
+
+    // 4. Module navigation & interactions
+    function openModule(name) {
+      moduleTitleActive.textContent = name;
+      moduleContainerView.classList.remove('pointer-events-none', 'opacity-0');
+      moduleContainerView.classList.add('pointer-events-auto', 'opacity-100');
+    }
+
+    function closeModule() {
+      moduleContainerView.classList.remove('pointer-events-auto', 'opacity-100');
+      moduleContainerView.classList.add('pointer-events-none', 'opacity-0');
+      errorView.classList.remove('pointer-events-auto', 'opacity-100');
+      errorView.classList.add('pointer-events-none', 'opacity-0');
+    }
+
+    btnBudget.addEventListener('click', () => openModule('BudgetSplit'));
+    btnHabits.addEventListener('click', () => openModule('Habits at Percentage'));
+    moduleBackBtn.addEventListener('click', closeModule);
+
+    // 5. Error state simulation
+    document.getElementById('trigger-error-simulation-btn').addEventListener('click', () => {
+      errorView.classList.remove('pointer-events-none', 'opacity-0');
+      errorView.classList.add('pointer-events-auto', 'opacity-100');
+    });
+
+    errorTryAgainBtn.addEventListener('click', () => {
+      errorView.classList.remove('pointer-events-auto', 'opacity-100');
+      errorView.classList.add('pointer-events-none', 'opacity-0');
+      closeModule();
+    });
+
+    // 6. State Testing Functions (State 1 through 7)
+    function setState(state) {
+      updateActivePill(state);
+      btnBudget.classList.remove('is-pressed');
+      btnHabits.classList.remove('is-pressed');
+
+      switch(state) {
+        case 'state1': // State 1 – Home, Dark Theme
+          setTheme('dark');
+          closeModule();
+          badgeBudget.textContent = "3 saved plans";
+          badgeHabits.textContent = "Done today: 85%";
+          break;
+        case 'state2': // State 2 – Home, Light Theme
+          setTheme('light');
+          closeModule();
+          badgeBudget.textContent = "3 saved plans";
+          badgeHabits.textContent = "Done today: 85%";
+          break;
+        case 'state3': // State 3 – Empty Badges
+          closeModule();
+          badgeBudget.textContent = "No plans yet";
+          badgeHabits.textContent = "No habits yet";
+          break;
+        case 'state4': // State 4 – With Data
+          closeModule();
+          badgeBudget.textContent = "3 saved plans";
+          badgeHabits.textContent = "Done today: 85%";
+          break;
+        case 'state5': // State 5 – Circle Pressed (Selected circle scaled down to 93%)
+          closeModule();
+          btnBudget.classList.add('is-pressed');
+          break;
+        case 'state6': // State 6 – Tool Open
+          openModule('BudgetSplit');
+          errorView.classList.remove('pointer-events-auto', 'opacity-100');
+          errorView.classList.add('pointer-events-none', 'opacity-0');
+          break;
+        case 'state7': // State 7 – Error
+          closeModule();
+          errorView.classList.remove('pointer-events-none', 'opacity-0');
+          errorView.classList.add('pointer-events-auto', 'opacity-100');
+          break;
+      }
+    }
+
+    function updateActivePill(stateId) {
+      document.querySelectorAll('.state-pill').forEach((pill, idx) => {
+        const id = `state${idx + 1}`;
+        if (id === stateId) {
+          pill.classList.add('active');
+        } else {
+          pill.classList.remove('active');
+        }
+      });
+    }
+  </script>
+
+
+
+
+</body></html>

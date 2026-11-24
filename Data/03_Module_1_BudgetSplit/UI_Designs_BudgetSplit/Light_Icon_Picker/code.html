@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;min-height:100vh;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-fixed-variant": "#881d24", "surface-bright": "#faf8ff", "on-primary": "#ffffff", "secondary-container": "#7bf7ba", "on-secondary-fixed": "#002113", "on-tertiary-fixed": "#410006", "background": "#faf8ff", "on-error": "#ffffff", "tertiary-fixed-dim": "#ffb3b0", "on-surface-variant": "#424753", "on-tertiary-container": "#fffbff", "primary-fixed-dim": "#acc7ff", "surface-container-highest": "#dee2f4", "on-primary-container": "#fefcff", "primary-fixed": "#d7e2ff", "on-secondary": "#ffffff", "surface-tint": "#005bbf", "primary-container": "#2c72d9", "surface-dim": "#d5d9eb", "secondary": "#006c47", "surface-variant": "#dee2f4", "on-secondary-fixed-variant": "#005234", "surface-container-lowest": "#ffffff", "outline-variant": "#c2c6d5", "surface-container-high": "#e3e7fa", "on-surface": "#161b28", "tertiary": "#a53337", "tertiary-container": "#c64b4d", "on-tertiary": "#ffffff", "inverse-surface": "#2b303e", "secondary-fixed-dim": "#60dda2", "secondary-fixed": "#7efabd", "error": "#ba1a1a", "surface-container-low": "#f2f3ff", "on-error-container": "#93000a", "tertiary-fixed": "#ffdad8", "on-background": "#161b28", "on-secondary-container": "#00714a", "inverse-on-surface": "#eef0ff", "outline": "#727784", "primary": "#0059ba", "surface-container": "#e9edff", "on-primary-fixed-variant": "#004492", "error-container": "#ffdad6", "inverse-primary": "#acc7ff", "on-primary-fixed": "#001a40", "surface": "#faf8ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-sm": "0.5rem", "margin-tablet": "2rem", "space-xs": "0.25rem", "space-xl": "2.25rem", "space-2xl": "3rem", "margin-desktop": "3rem", "space-md": "1rem", "margin": "1rem", "gutter-desktop": "1.5rem", "space-lg": "1.5rem" }, "fontFamily": { "amount-lg": ["JetBrains Mono"], "body-md": ["DM Sans"], "headline-lg-mobile": ["DM Sans"], "headline-md": ["DM Sans"], "body-sm": ["DM Sans"], "label-sm": ["DM Sans"], "display-mobile": ["DM Sans"], "amount-display": ["JetBrains Mono"], "amount-sm": ["JetBrains Mono"], "amount-display-mobile": ["JetBrains Mono"], "display": ["DM Sans"], "headline-lg": ["DM Sans"], "amount-md": ["JetBrains Mono"], "body-lg": ["DM Sans"], "headline-sm": ["DM Sans"], "label-md": ["DM Sans"] }, "fontSize": { "amount-lg": ["1.25rem", {"lineHeight": "1.75rem", "letterSpacing": "-0.02em", "fontWeight": "500"}], "body-md": ["0.9375rem", {"lineHeight": "1.5rem", "fontWeight": "400"}], "headline-lg-mobile": ["1.5rem", {"lineHeight": "2rem", "letterSpacing": "-0.01em", "fontWeight": "700"}], "headline-md": ["1.25rem", {"lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-sm": ["0.8125rem", {"lineHeight": "1.25rem", "fontWeight": "400"}], "label-sm": ["0.75rem", {"lineHeight": "1rem", "letterSpacing": "0.025em", "fontWeight": "600"}], "display-mobile": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.015em", "fontWeight": "700"}], "amount-display": ["2.5rem", {"lineHeight": "3rem", "letterSpacing": "-0.03em", "fontWeight": "600"}], "amount-sm": ["0.8125rem", {"lineHeight": "1.125rem", "fontWeight": "500"}], "amount-display-mobile": ["1.875rem", {"lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600"}], "display": ["3rem", {"lineHeight": "3.5rem", "letterSpacing": "-0.02em", "fontWeight": "700"}], "headline-lg": ["2rem", {"lineHeight": "2.5rem", "letterSpacing": "-0.015em", "fontWeight": "700"}], "amount-md": ["0.9375rem", {"lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "500"}], "body-lg": ["1.125rem", {"lineHeight": "1.75rem", "fontWeight": "400"}], "headline-sm": ["1.125rem", {"lineHeight": "1.5rem", "fontWeight": "600"}], "label-md": ["0.875rem", {"lineHeight": "1.25rem", "fontWeight": "500"}] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col pt-safe pb-safe"><main class="flex flex-col relative w-full min-h-screen bg-surface"><div class="flex flex-col w-full relative min-h-full select-none overflow-hidden font-body-md text-on-surface">
+<!-- Background App View (Simulated Light Theme BudgetSplit with Realistic Blur/Dimming) -->
+<div class="w-full px-4 pt-3 pb-24 opacity-85 filter blur-[2px] pointer-events-none transition-all duration-300">
+<!-- App Bar -->
+<div class="flex items-center justify-between py-2 mb-4">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-on-primary font-bold shadow-sm">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">BudgetSplit</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider shadow-xs">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block animate-pulse"></span>
+        OFFLINE
+      </div>
+</div>
+<!-- Main Budget Summary Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-4 shadow-sm mb-4">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Monthly Budget</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-medium">Nov Salary</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-amount-display-mobile text-amount-display-mobile text-primary">₹30,000</span>
+<span class="font-amount-sm text-amount-sm text-on-surface-variant">.00</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant mt-2 pt-2 border-t border-surface-container">
+<span>Spent: ₹18,450</span>
+<span class="text-secondary font-medium">Remaining: ₹11,550</span>
+</div>
+</div>
+<!-- Category Allocations List Behind Modal -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between px-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">Allocations</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">4 active</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-3 flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-lg">🏦</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-sm">Savings &amp; Reserves</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Target 20%</div>
+</div>
+</div>
+<span class="font-amount-md text-amount-md text-on-surface">₹6,000</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-3 flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-lg">👤</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-sm">Personal Expenses</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Target 25%</div>
+</div>
+</div>
+<span class="font-amount-md text-amount-md text-on-surface">₹7,500</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-3 flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-lg">💼</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-sm">Business Discretionary</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Target 30%</div>
+</div>
+</div>
+<span class="font-amount-md text-amount-md text-on-surface">₹9,000</span>
+</div>
+</div>
+</div>
+<!-- Modal Tint Scrim & Backdrop Blur Layer -->
+<div class="fixed inset-0 bg-[#0f172a]/45 backdrop-blur-[4px] z-30 transition-opacity"></div>
+<!-- Bottom Sheet Container Anchored to Bottom -->
+<div class="fixed inset-x-0 bottom-0 z-40 flex flex-col bg-surface-container-lowest rounded-t-[24px] shadow-2xl max-w-lg mx-auto transform transition-all duration-300 max-h-[813px] border-t border-slate-200">
+<!-- Drag Handle Pill -->
+<div class="flex justify-center pt-3 pb-1 cursor-grab active:cursor-grabbing">
+<div class="w-10 h-1.5 rounded-full bg-slate-300"></div>
+</div>
+<!-- Sheet Header Row -->
+<div class="px-5 pt-2 pb-3">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-slate-900 leading-tight">Choose Category Icon</h2>
+<p class="font-body-sm text-body-sm text-slate-500 mt-0.5">Select a visual symbol for this budget pool</p>
+</div>
+<button aria-label="Close icon picker" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 active:scale-95 transition-all flex items-center justify-center cursor-pointer" id="close-btn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Scrollable Center Workspace -->
+<div class="px-5 overflow-y-auto max-h-[calc(80vh-130px)] pb-2">
+<!-- Active Selection Preview Card -->
+<div class="w-full rounded-xl bg-slate-50 border border-slate-200/80 p-3 mb-4 flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-2xl shadow-xs transition-transform duration-200" id="preview-avatar">
+            🏦
+          </div>
+<div>
+<div class="font-label-sm text-[10px] font-bold tracking-wider text-slate-400 uppercase">Selected Symbol</div>
+<div class="font-headline-sm text-sm font-semibold text-slate-800" id="preview-title">Banking &amp; Deposits</div>
+</div>
+</div>
+<span class="font-amount-sm text-amount-sm font-mono px-2.5 py-1 rounded-md bg-blue-100 text-blue-700 border border-blue-200 font-medium" id="preview-tag">
+          #FINANCE
+        </span>
+</div>
+<!-- Quick Category Segment Bar -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-3 mb-1 no-scrollbar text-xs">
+<span class="px-3 py-1 rounded-full bg-blue-600 text-white font-medium shadow-xs">All (40)</span>
+<span class="px-3 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 cursor-pointer font-medium">Finance</span>
+<span class="px-3 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 cursor-pointer font-medium">Daily Living</span>
+<span class="px-3 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 cursor-pointer font-medium">Leisure</span>
+<span class="px-3 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 cursor-pointer font-medium">Services</span>
+</div>
+<!-- 8-Column × 5-Row Category Emoji Grid (40 Icons) -->
+<div class="grid grid-cols-8 gap-2 mb-2 pt-1" id="emoji-grid">
+<!-- Row 1 -->
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all ring-2 ring-blue-500 bg-blue-50/90 border border-blue-500 shadow-sm scale-105 cursor-pointer" data-emoji="🏦" data-name="Banking &amp; Deposits" data-tag="#FINANCE" type="button">🏦</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="👤" data-name="Personal &amp; Self" data-tag="#LIFESTYLE" type="button">👤</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="💼" data-name="Business &amp; Work" data-tag="#WORK" type="button">💼</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🚌" data-name="Transit &amp; Commute" data-tag="#TRAVEL" type="button">🚌</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🍱" data-name="Dining &amp; Food" data-tag="#FOOD" type="button">🍱</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🛒" data-name="Groceries &amp; Market" data-tag="#SUPPLIES" type="button">🛒</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🏠" data-name="Rent &amp; Housing" data-tag="#HOME" type="button">🏠</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="📱" data-name="Phone &amp; Utilities" data-tag="#BILLS" type="button">📱</button>
+<!-- Row 2 -->
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="💡" data-name="Electricity &amp; Power" data-tag="#UTILITIES" type="button">💡</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="💊" data-name="Pharmacy &amp; Meds" data-tag="#HEALTH" type="button">💊</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="📚" data-name="Books &amp; Courses" data-tag="#LEARNING" type="button">📚</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🎬" data-name="Movies &amp; Streaming" data-tag="#MEDIA" type="button">🎬</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="👕" data-name="Clothing &amp; Style" data-tag="#APPAREL" type="button">👕</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="⛽" data-name="Fuel &amp; Gas" data-tag="#TRANSPORT" type="button">⛽</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="✈️" data-name="Flights &amp; Holidays" data-tag="#TRAVEL" type="button">✈️</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🏋️" data-name="Gym &amp; Fitness" data-tag="#WELLNESS" type="button">🏋️</button>
+<!-- Row 3 -->
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🛡️" data-name="Insurance &amp; Safety" data-tag="#SECURITY" type="button">🛡️</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🎁" data-name="Gifts &amp; Donations" data-tag="#SOCIAL" type="button">🎁</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🧹" data-name="Cleaning &amp; House" data-tag="#DOMESTIC" type="button">🧹</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🆘" data-name="Emergency Fund" data-tag="#URGENT" type="button">🆘</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="📈" data-name="Equities &amp; Stocks" data-tag="#INVEST" type="button">📈</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="💻" data-name="Gadgets &amp; Tech" data-tag="#DEVICES" type="button">💻</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="☕" data-name="Coffee &amp; Cafes" data-tag="#SOCIAL" type="button">☕</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🎮" data-name="Gaming &amp; Hobbies" data-tag="#HOBBIES" type="button">🎮</button>
+<!-- Row 4 -->
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🎓" data-name="Tuition &amp; Fees" data-tag="#EDUCATION" type="button">🎓</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🧾" data-name="Taxes &amp; Invoices" data-tag="#COMPLIANCE" type="button">🧾</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🏥" data-name="Clinical &amp; Hospital" data-tag="#HEALTH" type="button">🏥</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🐾" data-name="Pet Care &amp; Vet" data-tag="#PETS" type="button">🐾</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🚗" data-name="Car Loan &amp; Care" data-tag="#VEHICLE" type="button">🚗</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🏡" data-name="Home Decor &amp; Garden" data-tag="#HOUSING" type="button">🏡</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="💰" data-name="Cash &amp; Liquidity" data-tag="#CASH" type="button">💰</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="📦" data-name="Post &amp; Deliveries" data-tag="#PARCELS" type="button">📦</button>
+<!-- Row 5 -->
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="💳" data-name="Credit Repayment" data-tag="#DEBT" type="button">💳</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🪙" data-name="Crypto &amp; Coins" data-tag="#ASSETS" type="button">🪙</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🛍️" data-name="Retail Shopping" data-tag="#SHOPPING" type="button">🛍️</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🏖️" data-name="Vacation &amp; Trips" data-tag="#LEISURE" type="button">🏖️</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🎯" data-name="Goal Milestones" data-tag="#TARGETS" type="button">🎯</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🧰" data-name="Repairs &amp; Upkeep" data-tag="#MAINT" type="button">🧰</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="🌱" data-name="Eco &amp; Sustainable" data-tag="#IMPACT" type="button">🌱</button>
+<button class="emoji-cell aspect-square rounded-xl flex items-center justify-center text-xl transition-all bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/60 active:scale-95 cursor-pointer" data-emoji="✏️" data-name="Stationery &amp; Office" data-tag="#DESK" type="button">✏️</button>
+</div>
+<!-- Human Touch: Delight Hint -->
+<div class="flex items-center justify-center gap-1.5 py-1 text-slate-400 font-body-sm text-body-sm text-[12px]">
+<span class="material-symbols-outlined text-[15px] text-primary">auto_awesome</span>
+<span>Icons adapt color accents automatically in ledgers</span>
+</div>
+</div>
+<!-- Bottom Actions Anchored Footer -->
+<div class="px-5 pt-3 pb-6 flex items-center gap-3 border-t border-slate-100 bg-surface-container-lowest">
+<button class="flex-1 py-3 px-4 rounded-xl font-headline-sm text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 active:scale-[0.98] border border-slate-200/80 text-center transition-all cursor-pointer" id="cancel-btn" type="button">
+        Cancel
+      </button>
+<button class="flex-[2] py-3 px-4 rounded-xl font-headline-sm text-sm font-semibold text-white bg-primary hover:bg-primary-container active:scale-[0.98] shadow-md shadow-primary/20 flex items-center justify-center gap-2 transition-all cursor-pointer" id="confirm-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>Select Icon</span>
+</button>
+</div>
+</div>
+<script>
+    (function initEmojiPicker() {
+      const cells = document.querySelectorAll('.emoji-cell');
+      const avatarEl = document.getElementById('preview-avatar');
+      const titleEl = document.getElementById('preview-title');
+      const tagEl = document.getElementById('preview-tag');
+      const confirmBtn = document.getElementById('confirm-btn');
+      const closeBtn = document.getElementById('close-btn');
+      const cancelBtn = document.getElementById('cancel-btn');
+
+      let currentSelection = {
+        emoji: '🏦',
+        name: 'Banking & Deposits',
+        tag: '#FINANCE'
+      };
+
+      const defaultClasses = ['bg-slate-100/90', 'hover:bg-slate-200/90', 'border-slate-200/60'];
+      const activeClasses = ['ring-2', 'ring-blue-500', 'bg-blue-50/90', 'border-blue-500', 'shadow-sm', 'scale-105'];
+
+      cells.forEach(cell => {
+        cell.addEventListener('click', () => {
+          // Reset previous cell states
+          cells.forEach(c => {
+            c.classList.remove(...activeClasses);
+            c.classList.add(...defaultClasses);
+          });
+
+          // Apply selected styles
+          cell.classList.remove(...defaultClasses);
+          cell.classList.add(...activeClasses);
+
+          // Update active object
+          currentSelection.emoji = cell.getAttribute('data-emoji') || '🏦';
+          currentSelection.name = cell.getAttribute('data-name') || 'Selected Item';
+          currentSelection.tag = cell.getAttribute('data-tag') || '#BUDGET';
+
+          // Micro-interaction bounce on preview icon
+          avatarEl.classList.add('scale-125');
+          setTimeout(() => {
+            avatarEl.innerText = currentSelection.emoji;
+            avatarEl.classList.remove('scale-125');
+          }, 90);
+
+          titleEl.innerText = currentSelection.name;
+          tagEl.innerText = currentSelection.tag;
+        });
+      });
+
+      // Delightful feedback on confirm button
+      confirmBtn.addEventListener('click', () => {
+        confirmBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span><span>Saving...</span>';
+        setTimeout(() => {
+          confirmBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">done_all</span><span>Updated!</span>';
+          confirmBtn.classList.remove('bg-primary');
+          confirmBtn.classList.add('bg-secondary');
+        }, 350);
+      });
+
+      const handleDismiss = () => {
+        const sheet = document.querySelector('.max-w-lg');
+        if (sheet) {
+          sheet.classList.add('translate-y-full');
+          setTimeout(() => {
+            sheet.classList.remove('translate-y-full');
+          }, 800);
+        }
+      };
+
+      closeBtn.addEventListener('click', handleDismiss);
+      cancelBtn.addEventListener('click', handleDismiss);
+    })();
+  </script>
+</div></main></body></html>
