@@ -1,6 +1,8 @@
 <div align="center">
 
-# 🚀 Level Up
+<img src="Data/01_App_Logo/levelup-logo-192.png" alt="Level Up Logo" width="100" height="100" />
+
+# Level Up
 
 ### **Small tools. Steady progress.**
 
@@ -14,7 +16,7 @@ A mobile-first, offline personal productivity toolkit for Android — built with
 
 **[📱 Tap here to download the Level Up APK](https://github.com/HARIHAR1406/Level-Up-App/releases/latest/download/app-release.apk)**
 
-> Works offline · Your data stays on your device · No cloud, no analytics
+> Works offline · Your data stays on your device · No cloud, no tracking
 
 </div>
 
@@ -27,19 +29,19 @@ The central dashboard with interactive module launchers, rotating motivational t
 
 | Light Mode | Dark Mode |
 |:----------:|:---------:|
-| ![Hub Light](Screenshots/02_hub_home_light.jpeg) | ![Hub Dark](Screenshots/01_hub_home_dark.jpeg) |
+| ![Hub Light](Screenshots/01_hub_home_light.jpeg) | ![Hub Dark](Screenshots/02_hub_home_dark.jpeg) |
 
 ---
 
 ### 💰 Module 1: BudgetSplit
-A percentage-based budget planning tool with real-time calculations, saved plans, and multiple export options.
+A percentage-based budget planning tool with real-time calculations, category management, saved plans, and multiple export options.
 
 | Light Mode | Dark Mode |
 |:----------:|:---------:|
-| ![Budget Input Light](Screenshots/04_budget_input_light.jpeg) | ![Budget Input Dark](Screenshots/03_budget_input_dark.jpeg) |
+| ![Budget Input Light](Screenshots/03_budget_input_light.jpeg) | ![Budget Input Dark](Screenshots/04_budget_input_dark.jpeg) |
 | ![Budget Categories Light](Screenshots/05_budget_categories_light.jpeg) | ![Budget Categories Dark](Screenshots/06_budget_categories_dark.jpeg) |
-| ![Budget Breakdown Light](Screenshots/08_budget_breakdown_saved_light.jpeg) | ![Budget Breakdown Dark](Screenshots/07_budget_breakdown_saved_dark.jpeg) |
-| ![Budget Export Light](Screenshots/09_budget_export_light.jpeg) | ![Budget Export Dark](Screenshots/10_budget_export_dark.jpeg) |
+| ![Budget Breakdown Light](Screenshots/07_budget_breakdown_saved_light.jpeg) | ![Budget Breakdown Dark](Screenshots/08_budget_breakdown_saved_dark.jpeg) |
+| ![Budget Export Light](Screenshots/09_budget_export_sheet_light.jpeg) | ![Budget Export Dark](Screenshots/10_budget_export_sheet_dark.jpeg) |
 
 #### 📤 Export Outputs
 | PDF Report | Text Share |
@@ -49,12 +51,12 @@ A percentage-based budget planning tool with real-time calculations, saved plans
 ---
 
 ### 📊 Module 2: Habits at Percentage
-A daily habit tracker where each habit carries a percentage weight toward your 100% daily goal.
+A daily habit tracker where each habit carries a mathematical percentage weight toward your 100% daily goal.
 
 | Light Mode | Dark Mode |
 |:----------:|:---------:|
 | ![Habits Action Light](Screenshots/11_habits_action_light.jpeg) | ![Habits Action Dark](Screenshots/12_habits_action_dark.jpeg) |
-| ![Habits Create Light](Screenshots/13_habits_create_top_light.jpeg) | ![Habits Create Dark](Screenshots/14_habits_create_top_dark.jpeg) |
+| ![Habits Create Form Light](Screenshots/13_habits_create_form_light.jpeg) | ![Habits Create Form Dark](Screenshots/14_habits_create_form_dark.jpeg) |
 | ![Habits Categories Light](Screenshots/15_habits_create_categories_light.jpeg) | ![Habits Categories Dark](Screenshots/16_habits_create_categories_dark.jpeg) |
 | ![Habits Visual Light](Screenshots/17_habits_visual_light.jpeg) | ![Habits Visual Dark](Screenshots/18_habits_visual_dark.jpeg) |
 
@@ -98,48 +100,77 @@ A daily habit tracker where each habit carries a percentage weight toward your 1
 ## 🛠️ Tech Stack
 
 | Component | Technology |
-|:---------:|:----------:|
-| **Framework** | ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white) Flutter (Dart) |
-| **Platform** | ![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white) Android |
-| **State Management** | Provider (ChangeNotifier) |
-| **Local Storage** | ![Hive](https://img.shields.io/badge/Hive-NoSQL-orange?style=flat-square) Hive |
-| **PDF Generation** | pdf package |
-| **Typography** | Google Fonts (Roboto bundled offline) |
-| **Sharing** | share_plus |
-| **Date Formatting** | intl |
-| **Architecture** | Feature-based modular |
+|:---|:---|
+| Framework | Flutter (Dart) |
+| Platform | Android |
+| State Management | Provider (ChangeNotifier) |
+| Local Database | Hive (NoSQL) |
+| Document Export | pdf package |
+| Sharing Service | share_plus |
+| Typography | Google Fonts (Roboto bundled offline) |
+| Date & Number Formatting | intl |
+| Architecture | Feature-Based Modular Architecture |
 
 ---
 
 ## 🏗️ Architecture
 
-Level Up follows a **feature-based modular architecture** where each module is self-contained with its own models, providers, services, utils, and widgets. The `core/` layer provides shared design system tokens and utilities.
+Level Up is designed with a **feature-based modular architecture**. Each module operates independently with its own UI screens, reactive state providers, domain calculators, and local persistence layer, while communicating through a shared core foundation.
 
 ```mermaid
-graph TD
-    A["🚀 main.dart<br/><i>Entry Point</i>"]
-    B["📱 app.dart<br/><i>MaterialApp + Providers</i>"]
-    C["🏠 Hub Screen<br/><i>Module Switchboard</i>"]
-    D["💰 BudgetSplit Module<br/><i>Budget Planning & Export</i>"]
-    E["📊 Habits Module<br/><i>Daily % Tracking</i>"]
-    F["⚙️ Core Layer<br/><i>Theme · Constants · Utilities</i>"]
-    G["💾 Hive Storage<br/><i>Local NoSQL Database</i>"]
+flowchart TB
+    subgraph AppEntry ["Application Entry"]
+        Main["main.dart<br/>(Hive Init & Providers)"] --> App["app.dart<br/>(MaterialApp & Theme Routing)"]
+    end
 
-    A --> B
-    B --> C
-    C --> D
-    C --> E
-    D --> F
-    E --> F
-    F --> G
+    AppEntry --> Hub
 
-    style A fill:#6C63FF,stroke:#5A52D5,color:#fff,stroke-width:2px
-    style B fill:#6C63FF,stroke:#5A52D5,color:#fff,stroke-width:2px
-    style C fill:#FF6B6B,stroke:#E55A5A,color:#fff,stroke-width:2px
-    style D fill:#2196F3,stroke:#1976D2,color:#fff,stroke-width:2px
-    style E fill:#9C27B0,stroke:#7B1FA2,color:#fff,stroke-width:2px
-    style F fill:#FF9800,stroke:#F57C00,color:#fff,stroke-width:2px
-    style G fill:#4CAF50,stroke:#388E3C,color:#fff,stroke-width:2px
+    subgraph HubLayer ["Central Switchboard"]
+        Hub["Hub Screen<br/>(Module Launchers & Telemetry)"]
+    end
+
+    HubLayer --> BudgetSplit
+    HubLayer --> Habits
+
+    subgraph Module1 ["Module 1: BudgetSplit"]
+        BS_UI["BudgetSplit Screen<br/>(Inputs, Categories, Breakdown)"]
+        BS_Prov["BudgetProvider<br/>(Reactive Calculation Engine)"]
+        BS_Exp["PDF & Text Exporters<br/>(Reports & System Share)"]
+        BS_Storage["BudgetStorage<br/>(CRUD Operations)"]
+        
+        BS_UI <--> BS_Prov
+        BS_Prov --> BS_Exp
+        BS_Prov <--> BS_Storage
+    end
+
+    subgraph Module2 ["Module 2: Habits at Percentage"]
+        Hab_UI["Action · Create · Visual Tabs<br/>(Cards, Donut Chart, Presets)"]
+        Hab_Prov["HabitsProvider<br/>(Percentage Weighing Engine)"]
+        Hab_Reset["Reset Service<br/>(Midnight Auto-Reset Timer)"]
+        Hab_Storage["HabitsStorage<br/>(State Persistence)"]
+
+        Hab_UI <--> Hab_Prov
+        Hab_Prov --> Hab_Reset
+        Hab_Prov <--> Hab_Storage
+    end
+
+    subgraph CoreLayer ["Core Shared Foundation"]
+        Theme["Theme & Design Tokens<br/>(Dark / Light Modes, 4px Spacing)"]
+        Utils["Utilities & Formatters<br/>(Rupee Currency, Greeting Helper)"]
+    end
+
+    Module1 --> CoreLayer
+    Module2 --> CoreLayer
+
+    subgraph StorageLayer ["Local Database (Hive NoSQL)"]
+        BoxTheme[("📦 lv_theme<br/>App Settings & Theme")]
+        BoxPlans[("📦 bs_plans<br/>Budget Plans & Categories")]
+        BoxHabits[("📦 hab_state<br/>Daily Habits & Reset Timestamp")]
+    end
+
+    BS_Storage --> BoxPlans
+    Hab_Storage --> BoxHabits
+    CoreLayer --> BoxTheme
 ```
 
 ---
@@ -217,11 +248,11 @@ Level-Up-App/
 
 All application data is stored locally using **Hive** (a lightweight NoSQL database for Flutter).
 
-| Hive Box | Purpose | Data |
-|:--------:|:-------:|:----:|
-| `lv_theme` | App settings | Theme mode, preferences |
-| `bs_plans` | Budget plans | Saved plan names, categories, allocations |
-| `hab_state` | Habit state | Daily habits, completion status, reset timestamp |
+| Hive Box | Purpose | Stored Data |
+|:---|:---|:---|
+| `lv_theme` | App Settings | Theme mode (Dark/Light), user preferences |
+| `bs_plans` | Budget Plans | Saved plan names, categories, allocations, percentage splits |
+| `hab_state` | Habit Tracking | Daily habits, completion status, category weights, reset timestamps |
 
 **🔒 Privacy by design:**
 - All data stays on the device — no cloud sync, no server, no analytics
@@ -277,34 +308,24 @@ The app uses a custom design system with:
 
 ---
 
-## 🔮 What's Next
+## 🔮 Future Vision & Enhancements
 
-This project reflects my thought process and ideas brought to life through code. I plan to continue enhancing Level Up with new modules, smarter features, and refined user experiences in upcoming updates.
+Level Up is a project shaped from my own thought process, product ideas, and real-world daily productivity needs. I brought this vision to life as a fully functional, offline-first personal toolkit.
 
-If you find this project interesting or would like to collaborate, feel free to reach out!
+In upcoming releases, I look forward to enhancing Level Up further by adding more focused modules, refining the UI interactions, and expanding its capabilities.
+
+If you find this project interesting, have feedback, or would like to collaborate and discuss ideas, feel free to reach out via Email or connect on LinkedIn!
 
 ---
 
 ## 👨‍💻 Developer
 
-<div align="center">
-
 **HARIHAR R**
 
-[![Email](https://img.shields.io/badge/Email-harihar.r1406%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:harihar.r1406@gmail.com)
-&nbsp;&nbsp;
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Harihar%20R-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harihar-r)
-&nbsp;&nbsp;
-[![GitHub](https://img.shields.io/badge/GitHub-HARIHAR1406-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/HARIHAR1406)
-
-*Designed, developed, and shipped with ❤️*
-
-</div>
+- **Email:** [harihar.r1406@gmail.com](mailto:harihar.r1406@gmail.com)
+- **LinkedIn:** [linkedin.com/in/harihar-r](https://www.linkedin.com/in/harihar-r)
+- **GitHub:** [github.com/HARIHAR1406](https://github.com/HARIHAR1406)
 
 ---
 
-<div align="center">
-
 *Built with Flutter · Designed for Android · Fully Offline*
-
-</div>
